@@ -14,18 +14,18 @@ defmodule RnaTranscription do
   end
 
   defp _to_rna([h | t]) do
-    case [h] do
-      'G' ->
-        'C' ++ _to_rna(t)
+    case h do
+      ?G ->
+        [?C | _to_rna(t)]
 
-      'T' ->
-        'A' ++ _to_rna(t)
+      ?T ->
+        [?A | _to_rna(t)]
 
-      'A' ->
-        'U' ++ _to_rna(t)
+      ?A ->
+        [?U | _to_rna(t)]
 
-      'C' ->
-        'G' ++ _to_rna(t)
+      ?C ->
+        [?G | _to_rna(t)]
 
       _ ->
         []
