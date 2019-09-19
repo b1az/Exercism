@@ -2,9 +2,16 @@
 
 ## DX
 
+### Run tests on save
+
 Add a test-watcher in `mix.exs` in `deps`:
 
 `{:mix_test_watch, "~> 0.8", only: :dev, runtime: false}`
+
+(With `sed` on macOS:
+
+`gsed -i '24i\      {:mix_test_watch, "~> 0.8", only: :dev, runtime: false}' <kata-name>/mix.exs`
+)
 
 Run `mix deps.get` and `mix test.watch`
 
