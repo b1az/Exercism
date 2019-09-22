@@ -1,4 +1,6 @@
 defmodule Words do
+  @non_alnum ~r/[\ :,_!&@$%^&]/
+
   @doc """
   Count the number of words in the sentence.
 
@@ -14,7 +16,7 @@ defmodule Words do
   defp words_from_sentence(sentence) do
     sentence
     |> String.downcase()
-    |> String.split(~r/[\ :,_!&@$%^&]/, trim: true)
+    |> String.split(@non_alnum, trim: true)
   end
 
   defp word_count(words) do
