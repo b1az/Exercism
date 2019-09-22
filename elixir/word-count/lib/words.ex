@@ -7,8 +7,8 @@ defmodule Words do
   @spec count(String.t()) :: map
   def count(sentence) do
     sentence
-    |> words_from_sentence
-    |> word_count
+    |> words_from_sentence()
+    |> word_count()
   end
 
   defp words_from_sentence(sentence) do
